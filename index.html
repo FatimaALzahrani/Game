@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة الأسئلة</title>
+    <link rel="icon" href="image.png" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+</head>
+<body>
+    <div id="login">
+        <img src="image.png" width="100px"/>
+        <h2>تسجيل الدخول</h2>
+        <input type="text" id="name-input" placeholder="أدخل اسمك">
+        <button onclick="startGame()">ابدأ التحدي</button>
+    </div>
+    <div id="game" style="display: none;">
+        <div id="question-container">
+            <h2 id="question">سؤال هنا</h2>
+            <div id="answers"></div>
+        </div>
+        <input type="text" id="answer-input" placeholder="اكتب الإجابة هنا">
+        <div id="timer">الوقت المتبقي: <span id="time">30</span> ثانية</div>
+        <div id="score">النقاط: <span id="points">0</span></div>
+    </div>
+    <div id="leaderboard" style="display: none;">
+        <h2>لائحة المتصدرين</h2>
+        <table id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>الترتيب</th>
+                    <th>الاسم</th>
+                    <th>النقاط</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-list"></tbody>
+        </table>
+        <!-- <button onclick="resetGame()">إعادة التحدي</button> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
